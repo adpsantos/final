@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Old+Uyghur&family=Playfair+Display:wght@600&display=swap');
+
+body {
+    background-color: #FFFFFA;
+    z-index: 0;
+}
+
+aside{
+    height: 100%;
+    width: 240px;
+    position: fixed;
+    z-index: 1;
+    background-color: #E63B3B;
+    overflow-x: hidden;
+}
+
+.sidenav {
+    top: 0;
+    left: 0;
+}
+
+.socials p{
+    bottom: 0;
+    left: 0;
+    color: #F4D3BE;
+
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #F4D3BE;
+    display: block;
+    margin-top: 65px;
+}
+
+
+.sidenav a:hover {
+    color: #FFFFFA;
+}
+
+.main {
+    margin-left: 150px ; 
+    font-size: 18px; 
+    padding: 20px 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+h1 {
+    color: #40434E;
+    grid-column: 2/4;
+    text-align: center;
+}
+
+.logo-gif {
+    width: 100%;
+    grid-column: 2/4;
+    grid-row: 2 / 4;
+    text-align: center;
+}
+
+.text{
+    margin-left: 150px ; 
+    font-size: 18px; 
+    padding: 20px 10px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+p{
+    grid-column: 3/4;
+}
+
+.pantry{
+    width: 100%;
+    grid-template-columns: 2/3;
+
+}
+
+footer{
+    width: 100%;
+}
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 16px; /* Adjusted font size for smaller screens */
+    }
+}
