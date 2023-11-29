@@ -62,7 +62,7 @@ h1 {
 }
 
 .text{
-    margin-left: 150px ; 
+    margin-left: 240px ; 
     font-size: 18px; 
     padding: 20px 10px;
     display: grid;
@@ -80,6 +80,7 @@ p{
 }
 
 footer{
+    margin-left: 240px;
     width: 100%;
     grid-template-columns: 1fr 1fr;
 }
