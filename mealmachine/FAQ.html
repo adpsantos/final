@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meal Machine</title>
     <link type="text/css" rel="stylesheet" href="styles/mealmachine.css">
-
 </head>
 
 <aside>
@@ -17,7 +16,6 @@
             <a href="FAQ.html" target="_blank">FAQ</a>
             <a href="about-us.html" target="_blank">About Us</a> 
     </div>
-  
     <div class="socials">
         <div class="social">
             <a href="https://facebook.com" target="_blank">
@@ -30,38 +28,143 @@
                 <img src="images/instagram.png" alt="instagram icon" width="30">
             </a>
         </div>
-        <p>MealMachine &copy; 2023 - Angelica Santos</p>
+        <div class="site-plan-container">
+            <a href="site-plan.html" target="_blank" class="site-plan-link">Site Plan</a>
+        </div>
+        <p class="copyright-text">MealMachine &copy; 2023 - Angelica Santos</p>
     <div>
 </aside> 
 
 <body> 
-    <img src="images/shoppinglist.jpg" alt="Photo of a shopping list">
-    <img src="images/computer.jpg" alt="Photo of computer showing food">
-    <img src="images/container.jpg" alt="Photo of prepped meals">
-    <div class="main">
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 3</div>
+          <img src="images/shoppinglist.jpg" alt="Photo of a shopping list" width="700">
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 3</div>
+          <img src="images/computer.jpg" alt="Photo of computer showing food" width="700">
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 3</div>
+          <img src="images/container.jpg" alt="Photo of prepped meals" width="700">
+        </div>
+        
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+        
+        </div>
+        <br>
+        <div class="dots">
+            <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span>
+            </div> 
+        </div>
+    </div>
+
+    <script>
+            let slideIndex = 1;
+            showSlides(slideIndex);
+            
+            function plusSlides(n) {
+              showSlides(slideIndex += n);
+            }
+            
+            function currentSlide(n) {
+              showSlides(slideIndex = n);
+            }
+            
+            function showSlides(n) {
+              let i;
+              let slides = document.getElementsByClassName("mySlides");
+              let dots = document.getElementsByClassName("dot");
+              if (n > slides.length) {slideIndex = 1}    
+              if (n < 1) {slideIndex = slides.length}
+              for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+              }
+              for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";  
+              dots[slideIndex-1].className += " active";
+            }
+    </script>
+        
+    <div class="main-FAQ">
         <h1>Frequently Asked Questions</h1>
     </div>
-    <p>
-        Who would typically use MealMachine?
-        -MealMachine is for all age types, young and older. 
-        Especially for people who love to create meal plans or find meal planning intimidating. 
-        MealMachine intends to make this task easier and helpful for parents who have do not have a lot of 
-        time in the day to plan and make meals for their families. 
-        People who are into fitness would love MealMachine as well! 
-              
-        Can I share my MealMachine generated recipes to friends and families?
-        -Yes! MealMachine allows you to share your recipes to friends and families. 
-        MealMachine tries to make it as integrated as possible between other users. 
-        With the "share recipe tab", you would be able to share your creations. 
-              
-        What does the MealMachine logo mean?
-        -The MealMachine logo shows a shopping cart referring to a shopping. 
-        Below that is a conveyor belt, referring to the generator part of the app. 
-              
-        Is MealMachine macros friendly?
-        -MealMachine is macros friendly. MealMachine has features that allow you to view 
+
+    <div class="Questions">
+        <button type="button" class="collapsible">Who would typically use MealMachine?</button>
+        <div class="Q1">
+            <p>
+            MealMachine is for all age types, young and older. 
+            Especially for people who love to create meal plans or find meal planning intimidating. 
+            MealMachine intends to make this task easier and helpful for parents who have do not have a lot of 
+            time in the day to plan and make meals for their families. 
+            People who are into fitness would love MealMachine as well! 
+            </p>
+        </div>
+        <button type="button" class="collapsible">Can I share my MealMachine generated recipes to friends and families?</button>
+        <div class="Q2">
+            <p>
+            Yes! MealMachine allows you to share your recipes to friends and families. 
+            MealMachine tries to make it as integrated as possible between other users. 
+            With the "share recipe tab", you would be able to share your creations. 
+            </p>
+        </div>
+        <button type="button" class="collapsible">What does the MealMachine logo mean?</button>
+        <div class="Q3">
+            <p>
+            The MealMachine logo shows a shopping cart referring to a shopping. 
+            Below that is a conveyor belt, referring to the generator part of the app. 
+            </p>
+        </div>
+        <button type="button" class="collapsible">Is MealMachine macros friendly?</button>
+        <div class="Q4">
+        MealMachine is macros friendly. MealMachine has features that allow you to view 
         your macros and shows you the total nutrition information of the meal.
-    </p>
-    <img src="images/salad.jpg" alt="Photo of delicious green salad">
+        </p>
+        </div>
+    </div>
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+              content.style.display = "none";
+            } else {
+              content.style.display = "block";
+            }
+          });
+        }
+        </script>   
+    <div class="end-image">   
+        <img src="images/salad.jpg" alt="Photo of delicious green salad" width="500">   
+    </div>
 </body>
+
+<footer>
+    <h2>Got Other Questions?</h2>
+    <form>
+        <input type="text" id="fname" name="fname" value="Questions Here"><br>
+    <div class="submit-button">
+        <input type="submit" value="Submit">
+    </div>
+    </form> 
+    <h1>Other Services coming soon!</h1>
+    <h1>Online Nutritionist</h1>
+</footer>
+
+
 </html>
