@@ -32,7 +32,7 @@
             <a href="site-plan.html" target="_blank" class="site-plan-link">Site Plan</a>
         </div>
         <p class="copyright-text">MealMachine &copy; 2023 - Angelica Santos</p>
-    <div>
+    </div>
 </aside> 
 
 <body> 
@@ -62,37 +62,37 @@
             <span class="dot" onclick="currentSlide(1)"></span> 
             <span class="dot" onclick="currentSlide(2)"></span> 
             <span class="dot" onclick="currentSlide(3)"></span>
-            </div> 
-        </div>
-    </div>
+        </div> 
+     </div>
+    
 
     <script>
-            let slideIndex = 1;
-            showSlides(slideIndex);
+        let slideIndex = 1;
+        showSlides(slideIndex);
             
-            function plusSlides(n) {
-              showSlides(slideIndex += n);
-            }
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
             
-            function currentSlide(n) {
-              showSlides(slideIndex = n);
-            }
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
             
-            function showSlides(n) {
-              let i;
-              let slides = document.getElementsByClassName("mySlides");
-              let dots = document.getElementsByClassName("dot");
-              if (n > slides.length) {slideIndex = 1}    
-              if (n < 1) {slideIndex = slides.length}
-              for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
-              }
-              for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-              }
-              slides[slideIndex-1].style.display = "block";  
-              dots[slideIndex-1].className += " active";
-            }
+        function showSlides(n) {
+          let i;
+          let slides = document.getElementsByClassName("mySlides");
+          let dots = document.getElementsByClassName("dot");
+          if (n > slides.length) {slideIndex = 1}    
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+          }
     </script>
         
     <div class="main-FAQ">
@@ -127,9 +127,10 @@
         </div>
         <button type="button" class="collapsible">Is MealMachine macros friendly?</button>
         <div class="Q4">
+          <p>
         MealMachine is macros friendly. MealMachine has features that allow you to view 
         your macros and shows you the total nutrition information of the meal.
-        </p>
+          </p>
         </div>
     </div>
 
@@ -148,7 +149,8 @@
             }
           });
         }
-        </script>   
+    </script> 
+      
     <div class="end-image">   
         <img src="images/salad.jpg" alt="Photo of delicious green salad" width="500">   
     </div>
